@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Little Angel School | LAS</title>
+
+<style>
+
+/* ===== BASIC ===== */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f7ff;
+    color: #173b70;
+}
+
+/* ===== LOGIN ===== */
+
+#loginPage {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg,#102f5f,#3975c5);
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(0,0,0,.3);
+}
+
+.login-logo {
+    width: 180px;
+    max-width: 80%;
+    border-radius: 15px;
+}
+
+.login-box h1 {
+    margin-bottom: 5px;
+    color: #173b70;
+}
+
+.login-box p {
+    color: #666;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 14px;
+    margin: 7px 0;
+    border: 1px solid #ccd6e5;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #173b70;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: #285fa5;
+}
+
+/* ===== MAIN WEBSITE ===== */
+
+#schoolWebsite {
+    display: none;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #173b70;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,.2);
+}
+
+.nav-logo {
+    width: 100px;
+    background: white;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: #ffd34e;
+}
+
+.nav-button {
+    border: none;
+    background: #ffd34e;
+    color: #173b70;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+
+    background:
+    linear-gradient(
+        rgba(15,45,90,.88),
+        rgba(15,45,90,.88)
+    ),
+    url("school.jpg") center/cover;
+
+    color: white;
+}
+
+.hero-logo {
+    width: 190px;
+    max-width: 75%;
+    background: white;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    margin: 20px 0 10px;
+}
+
+.hero h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: 25px auto;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 25px;
+    margin: 5px;
+    background: #ffd34e;
+    color: #173b70;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* ===== SECTIONS ===== */
+
+section {
+    padding: 70px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    color: #173b70;
+}
+
+.section-text {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    color: #5d6b7d;
+}
+
+/* ===== WELCOME ===== */
+
+.welcome {
+    background: #e7f0ff;
+    text-align: center;
+}
+
+#welcomeName {
+    color: #173b70;
+}
+
+/* ===== CARDS ===== */
+
+.cards {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap: 22px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card h3 {
+    color: #173b70;
+}
+
+/* ===== ABOUT ===== */
+
+.about {
+    background: white;
+}
+
+/* ===== ANNOUNCEMENTS ===== */
+
+.announcement {
+    max-width: 850px;
+    margin: 15px auto;
+    padding: 18px;
+    background: #fff8df;
+    border-left: 5px solid #e4b62d;
+    border-radius: 8px;
+}
+
+/* ===== FEES ===== */
+
+.fee-card {
+    border-top: 5px solid #285fa5;
+}
+
+.fee {
+    color: #173b70;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* ===== GALLERY ===== */
+
+.gallery {
+    display: grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* ===== FAQ ===== */
+
+.faq {
+    max-width: 850px;
+    margin: 15px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.06);
+}
+
+/* ===== CONTACT ===== */
+
+.contact {
+    background: #173b70;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #0b2345;
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+.footer-logo {
+    width: 120px;
+    background: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* ===== TOP BUTTON ===== */
+
+#topButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #173b70;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* ===== DARK MODE ===== */
+
+.dark {
+    background: #101827;
+    color: white;
+}
+
+.dark .card,
+.dark .faq,
+.dark .about {
+    background: #182337;
+    color: white;
+}
+
+.dark .section-title,
+.dark .card h3 {
+    color: #8dbaff;
+}
+
+.dark .section-text {
+    color: #ccd5e5;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:700px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-links {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= LOGIN ================= -->
+
+<div id="loginPage">
+
+    <div class="login-box">
+
+        <img
+            src="LAS-logo.png"
+            class="login-logo"
+            alt="Little Angel School Logo">
+
+        <h1>Welcome to LAS</h1>
+
+        <p>
+            Little Angel School Student Portal
+        </p>
+
+        <input
+            id="studentName"
+            type="text"
+            placeholder="Enter your name">
+
+        <input
+            id="studentContact"
+            type="tel"
+            placeholder="Enter contact number">
+
+        <button
+            class="login-btn"
+            onclick="login()">
+
+            Login
+
+        </button>
+
+        <p id="loginMessage"></p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= MAIN WEBSITE ================= -->
+
+<div id="schoolWebsite">
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <img
+        src="LAS-logo.png"
+        class="nav-logo"
+        alt="LAS Logo">
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#classes">Classes</a>
+
+        <a href="#facilities">Facilities</a>
+
+        <a href="#activities">Activities</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#contact">Contact</a>
+
+        <button
+            class="nav-button"
+            onclick="darkMode()">
+
+            🌙
+
+        </button>
+
+        <button
+            class="nav-button"
+            onclick="logout()">
+
+            Logout
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <img
+            src="LAS-logo.png"
+            class="hero-logo"
+            alt="Little Angel School Logo">
+
+        <h1>
+            Little Angel School
+        </h1>
+
+        <h2>
+            Place Where Education Meets Excellence
+        </h2>
+
+        <p>
+            Welcome to Little Angel School —
+            a place where knowledge, discipline,
+            creativity and confidence come together
+            to help students build a bright future.
+        </p>
+
+        <a
+            class="hero-btn"
+            href="#classes">
+
+            Explore Classes
+
+        </a>
+
+        <a
+            class="hero-btn"
+            href="#contact">
+
+            Contact School
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WELCOME ================= -->
+
+<section class="welcome">
+
+    <h2>
+        Welcome,
+        <span id="welcomeName"></span>! 👋
+    </h2>
+
+    <p>
+        We are happy to have you at
+        Little Angel School.
+    </p>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <h1 class="section-title">
+        About Little Angel School
+    </h1>
+
+    <p class="section-text">
+
+        Little Angel School is dedicated to
+        providing quality education in a safe,
+        friendly and supportive environment.
+
+        <br><br>
+
+        Our aim is to encourage students to learn,
+        think creatively, communicate confidently
+        and develop good values.
+
+        <br><br>
+
+        We believe every student has unique
+        abilities and deserves opportunities to grow.
+
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📚 Quality Education</h3>
+            <p>
+                Focus on strong academic foundations.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>👩‍🏫 Supportive Teachers</h3>
+            <p>
+                Teachers guide students throughout
+                their learning journey.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌱 Overall Growth</h3>
+            <p>
+                Academic, creative, social and
+                personal development.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 Good Values</h3>
+            <p>
+                Respect, discipline, teamwork
+                and responsibility.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ANNOUNCEMENTS ================= -->
+
+<section>
+
+    <h1 class="section-title">
+        📢 School Announcements
+    </h1>
+
+    <div class="announcement">
+        <b>Important:</b>
+        Please check with the school office
+        for the latest notices.
+    </div>
+
+    <div class="announcement">
+        <b>Reminder:</b>
+        Students should maintain regular attendance.
+    </div>
+
+    <div class="announcement">
+        <b>Notice:</b>
+        Parents can contact the school for
+        admission information.
+    </div>
+
+</section>
+
+
+<!-- ================= CLASSES ================= -->
+
+<section id="classes">
+
+    <h1 class="section-title">
+        📚 Classes & Fees
+    </h1>
+
+    <p class="section-text">
+        View the monthly fee for each class.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card fee-card">
+            <h3>Nursery</h3>
+            <p class="fee">₹700 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>LKG</h3>
+            <p class="fee">₹700 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>UKG</h3>
+            <p class="fee">₹700 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 1</h3>
+            <p class="fee">₹800 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 2</h3>
+            <p class="fee">₹900 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 3</h3>
+            <p class="fee">₹900 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 4</h3>
+            <p class="fee">₹900 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 5</h3>
+            <p class="fee">₹900 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 6</h3>
+            <p class="fee">₹1,000 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 7</h3>
+            <p class="fee">₹1,000 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 8</h3>
+            <p class="fee">₹1,000 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 9</h3>
+            <p class="fee">₹1,200 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 10</h3>
+            <p class="fee">₹1,200 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 11</h3>
+            <p class="fee">₹1,200 / month</p>
+        </div>
+
+        <div class="card fee-card">
+            <h3>Class 12</h3>
+            <p class="fee">₹1,200 / month</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FACILITIES ================= -->
+
+<section class="about" id="facilities">
+
+    <h1 class="section-title">
+        🏫 Our Facilities
+    </h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📖 Library</h3>
+            <p>
+                A learning space for reading
+                and knowledge.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Technology</h3>
+            <p>
+                Technology-supported learning
+                opportunities.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>⚽ Sports</h3>
+            <p>
+                Activities that encourage
+                fitness and teamwork.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🔬 Learning Activities</h3>
+            <p>
+                Practical and creative
+                learning experiences.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🌳 Safe Environment</h3>
+            <p>
+                A friendly environment
+                for students.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Creative Learning</h3>
+            <p>
+                Opportunities to express
+                creativity.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ACTIVITIES ================= -->
+
+<section id="activities">
+
+    <h1 class="section-title">
+        🎯 Student Activities
+    </h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🏆 Sports</h3>
+            <p>
+                Games and physical activities.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎤 Cultural Events</h3>
+            <p>
+                Students can participate
+                in cultural programs.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Art & Craft</h3>
+            <p>
+                Creative activities for students.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Quiz & Competitions</h3>
+            <p>
+                Activities that encourage learning.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TEACHERS ================= -->
+
+<section class="about">
+
+    <h1 class="section-title">
+        👩‍🏫 Our Teaching Team
+    </h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Experienced Teachers</h3>
+            <p>
+                Dedicated educators who support
+                students in their learning.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Student Support</h3>
+            <p>
+                Teachers encourage questions
+                and help students understand concepts.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Modern Teaching</h3>
+            <p>
+                Different teaching methods can
+                make learning engaging.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <h1 class="section-title">
+        🖼️ School Gallery
+    </h1>
+
+    <div class="gallery">
+
+        <img src="school.jpg"
+             alt="School">
+
+        <img src="school.jpg"
+             alt="School">
+
+        <img src="school.jpg"
+             alt="School">
+
+    </div>
+
+    <p class="section-text">
+        Replace these images with your
+        actual school photographs.
+    </p>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="about">
+
+    <h1 class="section-title">
+        ❓ Frequently Asked Questions
+    </h1>
+
+    <div class="faq">
+
+        <h3>
+            How can I contact the school?
+        </h3>
+
+        <p>
+            Use the contact information below.
+        </p>
+
+    </div>
+
+    <div class="faq">
+
+        <h3>
+            How can I know the class fees?
+        </h3>
+
+        <p>
+            Visit the Classes & Fees section.
+        </p>
+
+    </div>
+
+    <div class="faq">
+
+        <h3>
+            Can I visit the school?
+        </h3>
+
+        <p>
+            Please contact the school
+            before visiting.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <h2>
+        📞 Contact Little Angel School
+    </h2>
+
+    <p>
+        📧 littleangelschool@gmail.com
+    </p>
+
+    <p>
+        📍 Kerakat (Shekzada),
+        Jaunpur-222142,
+        Uttar Pradesh
+    </p>
+
+    <p>
+        <strong>
+            Study better, grow brighter.
+        </strong>
+    </p>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <img
+        src="LAS-logo.png"
+        class="footer-logo"
+        alt="LAS Logo">
+
+    <h2>
+        Little Angel School
+    </h2>
+
+    <p>
+        LAS • Education • Growth • Excellence
+    </p>
+
+    <p>
+        © 2026 Little Angel School
+    </p>
+
+</footer>
+
+
+<button
+    id="topButton"
+    onclick="window.scrollTo(0,0)">
+
+    ↑
+
+</button>
+
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* LOGIN */
+
+function login() {
+
+    var name =
+    document.getElementById("studentName").value.trim();
+
+    var contact =
+    document.getElementById("studentContact").value.trim();
+
+
+    if (name === "" || contact === "") {
+
+        document.getElementById("loginMessage").innerHTML =
+        "Please enter your name and contact number.";
+
+        document.getElementById("loginMessage").style.color =
+        "red";
+
+        return;
+    }
+
+
+    if (contact.length < 10) {
+
+        document.getElementById("loginMessage").innerHTML =
+        "Please enter a valid contact number.";
+
+        document.getElementById("loginMessage").style.color =
+        "red";
+
+        return;
+    }
+
+
+    /* SAVE LOGIN ON THIS DEVICE */
+
+    localStorage.setItem(
+        "LAS_Name",
+        name
+    );
+
+    localStorage.setItem(
+        "LAS_Contact",
+        contact
+    );
+
+    localStorage.setItem(
+        "LAS_LoggedIn",
+        "yes"
+    );
+
+
+    showWebsite();
+}
+
+
+/* SHOW WEBSITE */
+
+function showWebsite() {
+
+    var name =
+    localStorage.getItem("LAS_Name");
+
+
+    document.getElementById("loginPage").style.display =
+    "none";
+
+    document.getElementById("schoolWebsite").style.display =
+    "block";
+
+    document.getElementById("welcomeName").innerHTML =
+    name;
+}
+
+
+/* CHECK SAVED LOGIN */
+
+window.onload = function() {
+
+    if (
+        localStorage.getItem("LAS_LoggedIn")
+        === "yes"
+    ) {
+
+        showWebsite();
+
+    }
+
+};
+
+
+/* LOGOUT */
+
+function logout() {
+
+    localStorage.removeItem("LAS_Name");
+
+    localStorage.removeItem("LAS_Contact");
+
+    localStorage.removeItem("LAS_LoggedIn");
+
+    location.reload();
+
+}
+
+
+/* DARK MODE */
+
+function darkMode() {
+
+    document.body.classList.toggle("dark");
+
+}
+
+
+/* TOP BUTTON */
+
+window.onscroll = function() {
+
+    var button =
+    document.getElementById("topButton");
+
+
+    if (window.scrollY > 300) {
+
+        button.style.display = "block";
+
+    } else {
+
+        button.style.display = "none";
+
+    }
+
+};
+
+</script>
+
+</body>
+</html>
